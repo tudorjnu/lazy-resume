@@ -10,68 +10,50 @@ export function SidePannel() {
   )
 }
 
-export function Separator() {
-  return <hr className="my-1 border-t border-gray-300" />
-}
-
 export function SectionSeparator() {
   return <hr className="my-1 border-t border-gray-300" />
 }
 
-export function BasicsSection({ data }: { data: any }) {
+export function BasicsSection({
+  data,
+  fontSize,
+}: {
+  data: any
+  fontSize: number
+}) {
   const basics = data.basics
-  return (
-    <div className="flex flex-col justify-stretch">
-      <p className="text-lg font-bold">
-        {basics.name} | {basics.label}
-      </p>
-      <Separator />
-      <ul className="flex list-none flex-row justify-around py-0">
-        <li> {basics.phone} </li>
-        <li> {basics.email} </li>
-        <li> {basics.url} </li>
-      </ul>
-      <Separator />
-      <p> {basics.summary} </p>
-    </div>
-  )
-}
 
-export function WorkSection({ data }: { data: any }) {
   return (
-    <div className="flex flex-col justify-stretch">
-      <ul>
-        {data.work.map((work: any, index: number) => (
-          <li key={index} className="mb-4">
-            <h3 className="font-bold">
-              <a href={work.url} target="_blank" rel="noopener noreferrer">
-                {work.name}
-              </a>
-            </h3>
-            <p>
-              <strong>{work.position}</strong> ({work.startDate} -{" "}
-              {work.endDate})
-            </p>
-            {work.highlights && work.highlights.length > 0 && (
-              <div>
-                <h4 className="font-semibold">Courses:</h4>
-                <ul className="ml-4">
-                  {work.highlights.map((course: string, idx: number) => (
-                    <li key={idx} className="mx-1">
-                      {course}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
+    <div className={`flex flex-col justify-stretch text-[${fontSize}pt]`}>
+      <div className="flex justify-between text-[1.25rem] font-semibold">
+        <div>{basics.name}</div>
+        <div>{basics.label}</div>
+      </div>
+      <SectionSeparator />
+      <ul className="flex list-none flex-row justify-around py-0">
+        <li>
+          <a href={`tel:${basics.phone}`}>{basics.phone}</a>
+        </li>
+        <li>
+          <a href={`mailto:${basics.email}`}>{basics.email}</a>
+        </li>
+        <li>
+          <a href={`${basics.url}`}>{basics.url}</a>
+        </li>
+        {basics.location && (
+          <li>
+            {basics.location.city}, {basics.location.countryCode}
           </li>
-        ))}
+        )}
       </ul>
+      <SectionSeparator />
+      <p className="text-justify"> {basics.summary} </p>
     </div>
   )
 }
 
 function formatDate(dateString: string) {
+  if (dateString === "") return "Present"
   const date = new Date(dateString)
   return date.toLocaleDateString("en-UK", {
     year: "numeric",
@@ -87,8 +69,8 @@ export function Section({
   children: React.ReactNode
 }) {
   return (
-    <div className="mt-2 flex flex-col justify-stretch font-semibold">
-      <h2>{name}</h2>
+    <div className="mb-0 mt-4 flex flex-col justify-stretch">
+      <h2 className="text-[1.125em] font-semibold">{name}</h2>
       <SectionSeparator />
       {children}
     </div>
@@ -100,33 +82,74 @@ export function EducationSection({ data }: { data: any }) {
     <div className="flex flex-col justify-stretch">
       <ul>
         {data.education.map((education: any, index: number) => (
-          <li key={index} className="mb-4">
+          <li key={index} className="mb-2">
             <h3 className="font-bold">
               <a href={education.url} target="_blank" rel="noopener noreferrer">
                 {education.institution}
               </a>
             </h3>
-            <div className="flex flex-row justify-between">
-              <p className="text-sm">
+            <div className="flex flex-row justify-between ">
+              <p className="font-semibold">
                 {education.studyType} in {education.area}
+                {education.score && (
+                  <span className="italic text-gray-500">
+                    {" "}
+                    {education.score}
+                  </span>
+                )}
               </p>
               <p className="italic text-gray-700">
                 {formatDate(education.startDate)} -{" "}
                 {formatDate(education.endDate)}
               </p>
             </div>
-            <p>Score: {education.score}</p>
             {education.courses && education.courses.length > 0 && (
-              <div>
-                <h4 className="font-semibold">Courses:</h4>
-                <ul className="ml-4">
-                  {education.courses.map((course: string, idx: number) => (
-                    <li key={idx} className="mx-1">
-                      {course}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <>
+                <strong>Courses</strong>: {education.courses.join("; ")}
+              </>
+            )}
+            {education.accomplishments && (
+              <ul className="ml-4 list-disc">
+                {education.accomplishments.map(
+                  (accomplishment: string, idx: number) => (
+                    <li key={idx}>{accomplishment}</li>
+                  )
+                )}
+              </ul>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+export function WorkSection({ data }: { data: any }) {
+  return (
+    <div className="flex flex-col justify-stretch">
+      <ul>
+        {data.work.map((work: any, index: number) => (
+          <li key={index} className="mb-4">
+            <h3 className="font-bold">
+              <a href={work.url} target="_blank" rel="noopener noreferrer">
+                {work.name}
+              </a>
+            </h3>
+            <div className="flex flex-row justify-between ">
+              <p className="font-semibold">{work.position}</p>
+              <p className="italic text-gray-700">
+                {formatDate(work.startDate)} - {formatDate(work.endDate)}
+              </p>
+            </div>
+            <p>{work.summary}</p>
+            {work.highlights && work.highlights.length > 0 && (
+              <ul className="ml-4 list-disc">
+                {work.highlights.map((course: string, idx: number) => (
+                  <li key={idx} className="mx-1">
+                    {course}
+                  </li>
+                ))}
+              </ul>
             )}
           </li>
         ))}
@@ -227,21 +250,13 @@ export function SkillsSection({
   fontSize: number
 }) {
   return (
-    <div
-      className="flex flex-col justify-stretch"
-      style={{ fontSize: `${fontSize}px` }}
-    >
-      <ul>
+    <div className="flex flex-col justify-stretch">
+      <ul className="flex-between flex flex-wrap">
         {data.skills.map((skill: any, index: number) => (
-          <li key={index} className="mb-2">
-            <strong>{skill.name}</strong> - {skill.level}
-            <ul className="ml-4 flex flex-row">
-              {skill.keywords.map((keyword: string, idx: number) => (
-                <li key={idx} className="mx-1">
-                  {keyword}
-                </li>
-              ))}
-            </ul>
+          <li key={index} className="">
+            <p style={{ fontSize: `${fontSize}pt` }}>
+              <strong>{skill.name}</strong>: {skill.keywords.join("; ")}
+            </p>
           </li>
         ))}
       </ul>
@@ -293,20 +308,18 @@ export function Resume({ data, fontSize }: { data: any; fontSize: number }) {
   return (
     <div
       className="flex h-[297mm] w-[210mm] flex-col  justify-stretch bg-white p-6 shadow-lg"
-      style={{
-        fontSize: `${fontSize}px`,
-      }}
+      style={{ fontSize: `${fontSize}pt` }}
     >
       <BasicsSection data={data} fontSize={fontSize} />
-      <SectionSeparator />
-      <Section name="Skills">
+      <Section name="SKILLS">
         <SkillsSection data={data} fontSize={fontSize} />
       </Section>
-      <SectionSeparator />
-      <EducationSection data={data} fontSize={fontSize} />
-      <SectionSeparator />
-      <WorkSection data={data} fontSize={fontSize} />
-      <SectionSeparator />
+      <Section name="EDUCATION">
+        <EducationSection data={data} fontSize={fontSize} />
+      </Section>
+      <Section name="EXPERIENCE">
+        <WorkSection data={data} fontSize={fontSize} />
+      </Section>
       <VolunteerSection data={data} fontSize={fontSize} />
       <SectionSeparator />
       <PublicationsSection data={data} fontSize={fontSize} />
@@ -323,7 +336,7 @@ export default function Page() {
 
       {/* Main content area, grows to take the remaining space */}
       <main className="flex flex-1 items-start justify-center p-6">
-        <Resume data={resumeData} fontSize={11} />
+        <Resume data={resumeData} fontSize={9} />
       </main>
     </div>
   )

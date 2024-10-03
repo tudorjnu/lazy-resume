@@ -1,36 +1,64 @@
 {
   "basics": {
-    "name": "John Doe",
-    "label": "Programmer",
+    "name": "Tudor Jianu",
+    "label": "",
+    "email": "tudorjnu@gmail.com",
+    "url": "https://tudorjnu.github.io",
     "image": "",
-    "email": "john@gmail.com",
     "phone": "(912) 555-4321",
-    "url": "https://johndoe.com",
-    "summary": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    "summary": "Tudor Jianu completed an MSc in Data Science and Artificial Intelligence at the University of Liverpool and is currently working towards a PhD in Artificial Intelligence focused on medical robotics. Specializes in research areas that include autonomous navigation in endovascular procedures. Beyond the academic sphere, shows a strong inclination for creating clean software solutions. Thrives in fast-paced, innovative environments committed to pushing the boundaries of medical technology.",
     "location": {
       "address": "2712 Broadway St",
       "postalCode": "CA 94115",
-      "city": "San Francisco",
-      "countryCode": "US",
-      "region": "California"
+      "city": "Liverpool",
+      "countryCode": "UK",
+      "region": "Merseyside"
     },
     "profiles": [
       {
-        "network": "Twitter",
-        "username": "john",
-        "url": "https://twitter.com/john"
+        "network": "LinkedIn",
+        "username": "tudorjnu",
+        "url": "https://www.linkedin.com/in/tudorjnu/"
+      },
+      {
+        "network": "Github",
+        "username": "tudorjnu",
+        "url": "https://github.com/tudorjnu/"
       }
     ]
   },
   "work": [
     {
-      "name": "Company",
-      "position": "President",
-      "url": "https://company.com",
-      "startDate": "2013-01-01",
-      "endDate": "2014-01-01",
-      "summary": "Description…",
-      "highlights": ["Started the company"]
+      "company": "University of Liverpool",
+      "position": "PhD Researcher",
+      "startDate": "2021-10-01",
+      "endDate": "",
+      "summary": "Pursuing a Ph.D. in autonomous endovascular navigation, Tudor excels in integrating deep learning, software development, and data science. Engineered an endovascular simulator using Python and MuJoCo, demonstrating expertise in areas like reinforcement learning and neural networks. Notable for problem-solving and team collaboration skills, which extend to mentoring and conducting AI workshops.",
+      "highlights": [
+        "Developed an endovascular simulator, CathSim, using Python",
+        "Deployed scripts on HPC's (Barkla)",
+        "Researched and applied state-of-the-art neural network architectures",
+        "Created an autonomous agent capable of performing endovascular navigation tasks",
+        "Presented at the Hamlyn Symposium of Medical Robotics",
+        "Supervised and guided trainee researchers, providing essential technical advice to foster academic development",
+        "Developed demonstrations for SmartLab using industrial manipulators (UR5) and instance segmentation networks (Mask-RCNN)"
+      ]
+    },
+    {
+      "company": "University of Liverpool CS Outreach",
+      "position": "Team Member",
+      "website": "https://outreach.csc.liv.ac.uk",
+      "startDate": "2021-10-01",
+      "endDate": "",
+      "summary": "The Department of Computer Science at the University of Liverpool actively engages in educational outreach programs to promote computer science. In collaboration with the Electrical Engineering and Electronics department, a range of events and resources are offered to schools and the general public.",
+      "highlights": [
+        "Delivered an Introduction to Programming Workshop at Liverpool World Museum using Pi2Go robots",
+        "Participated in continuous improvement by generating suggestions, engaging in problem-solving activities to support teamwork.",
+        "Generated ideas while working in a small team to produce activities for a series of fun and engaging events to market the university",
+        "Developed an Introduction to Machine Learning activity as part of Computer Science Summer School activities.",
+        "Created Machine Learning activities by modifying TypeScript and HTML code",
+        "Created various educational activities for the Computer Science Department"
+      ]
     }
   ],
   "volunteer": [
@@ -46,24 +74,67 @@
   ],
   "education": [
     {
-      "institution": "University",
+      "institution": "University of Liverpool",
+      "area": "Computer Science",
       "url": "https://institution.com/",
-      "area": "Software Development",
-      "studyType": "Bachelor",
-      "startDate": "2011-01-01",
-      "endDate": "2013-01-01",
-      "score": "4.0",
-      "courses": ["DB1101 - Basic SQL"]
+      "studyType": "PhD",
+      "startDate": "2021-10-01",
+      "endDate": "",
+      "accomplishments": [
+        "Distinguished expertise in deep learning methodologies, including convolutional neural networks, multi-layer perceptrons, and transformers.",
+        "Contributed to the development of a sim-to-xray image mapping network.",
+        "Actively participated in mentoring and supervising master's students during their thesis work.",
+        "Conducted workshops on AI and Deep Learning as part of the outreach group.",
+        "Presented work at the esteemed Hamlyn Symposium within the Recent Advances in Autonomous Surgery workshop."
+      ]
     },
     {
-      "institution": "University",
-      "url": "https://institution.com/",
-      "area": "Software Development",
-      "studyType": "Bachelor",
-      "startDate": "2011-01-01",
-      "endDate": "2013-01-01",
-      "score": "4.0",
-      "courses": ["DB1101 - Basic SQL"]
+      "institution": "University of Liverpool",
+      "area": "Computer Science",
+      "studyType": "Masters of Science",
+      "startDate": "2020-09-01",
+      "endDate": "2021-09-01",
+      "courses": [
+        "COMP516 - Research Methods in Computer Science",
+        "COMP517 - Programming Fundamentals",
+        "COMP518 - Database and Information Systems",
+        "COMP533 - Maths and Statistics for AI and Data Science",
+        "COMP527 - Data Mining and Visualisation",
+        "COMP532 - Machine Learning and BioInspired Optimisation",
+        "COMP534 - Applied Artificial Intelligence",
+        "COMP575 - Computational Intelligence",
+        "COMP702 - MSc Project"
+      ]
+    },
+    {
+      "institution": "Coventry University",
+      "area": "Business Administration",
+      "studyType": "Bachelours of Arts",
+      "startDate": "2017-09-01",
+      "endDate": "2021-08-01",
+      "courses": [
+        "A106MC - Design Your Own Project",
+        "110SAM - Internal Business Relations",
+        "148HRM - Managing People",
+        "105MKT - Marketing Essentials",
+        "108SAM - Quantitative Methods for Business",
+        "117ECN - The Economic Environment of Business",
+        "120SAM - Continuing Professional Development 1",
+        "2000ACC - Principles of Business Accounting",
+        "240SAM - Supply Chain and Operations Management",
+        "A203IAE - Making Money On-Line",
+        "211MKT - Buyer Behaviour",
+        "220SAM - Continuing Professional Development 2",
+        "247SAM - Exploring Business Strategy",
+        "251FIN - Introduction to Financial Services",
+        "344SAM - Project Management",
+        "361SAM - Contemporary Business Strategy",
+        "A320DEL - Absolute Beginners' German 3",
+        "320SSL - Continuing Professional Development 3",
+        "348SAM - Managing Change",
+        "352SAM - Business Dissertation",
+        "353FIN - International Finance"
+      ]
     }
   ],
   "awards": [
@@ -93,9 +164,42 @@
   ],
   "skills": [
     {
-      "name": "Web Development",
-      "level": "Master",
-      "keywords": ["HTML", "CSS", "JavaScript"]
+      "name": "Technical Skills",
+      "keywords": [
+        "Machine Learning",
+        "Algorithms",
+        "Data Mining",
+        "Data Visualization",
+        "Artificial Intelligence",
+        "Database Systems"
+      ]
+    },
+    {
+      "name": "Soft Skills",
+      "keywords": [
+        "Planning",
+        "Problem-Soving",
+        "Collaboration",
+        "Communication",
+        "Active Learning",
+        "Innovation",
+        "Mentoring",
+        "Leadership",
+        "Responsibility"
+      ]
+    },
+    {
+      "name": "Programming Languages",
+      "keywords": [
+        "Python",
+        "Ruby",
+        "SML",
+        "Bash",
+        "HTML",
+        "CSS",
+        "SQL",
+        "JavaScript"
+      ]
     }
   ],
   "languages": [
